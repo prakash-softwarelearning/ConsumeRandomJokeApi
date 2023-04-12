@@ -1,0 +1,45 @@
+﻿@using Model
+@model RandomJokes 
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@using (Html.BeginForm())  
+{  
+   
+<div class="text-center">
+        <h1><label>Total Jokes : @ViewBag.Jokes</label></h1>
+    <br/>
+    <table>
+        <tr>
+                <td><label>punchline : </label></td>
+                <td><div> @Html.DisplayTextFor(m=>m.punchline)</div></td>
+        </tr>
+        <tr>
+                <td><label>Type : </label> </td>
+                <td>
+                    <div>
+                        @Html.DisplayTextFor(m=>m.type)
+                    </div>
+                </td>
+        </tr>
+         <tr>
+                <td><label>Jokes : </label></td>
+                <td>
+                    <div>
+                        @Html.DisplayTextFor(m=>m.Jokes)
+                    </div>
+                </td>
+        </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+    </table>
+    @Html.HiddenFor(m=>m.Id)
+</div>
+    <div class="clearStyle"></div>
+    <div class="buttonContainer" style="float: right;">
+        <button type="submit">Next</button>
+    </div>
+}
